@@ -196,7 +196,7 @@ for i in range(30):
         if np.all(np.dot(mat, vector) >= b):
             conteo += veces
 
-            if (offset + vector_completo @ QT @ vector_completo) == 8:
+            if (offset + vector_completo @ QT @ vector_completo) == 8: # Valor óptimo del problema
               conteo_opt += veces
 
     num_factibles.append(conteo)
@@ -226,3 +226,4 @@ plt.grid(True)
 print(execution_times)
 print(num_factibles)
 print(num_opt)
+
