@@ -146,7 +146,7 @@ for i in range(30):
         if np.all(np.dot(mat, vector) >= b):
             conteo += veces
 
-            if np.dot(vector, c) == 8:
+            if np.dot(vector, c) == 8: # Valor óptimo del problema
                 conteo_opt += veces
     
     num_factibles.append(conteo)
@@ -176,3 +176,4 @@ plt.grid(True)
 print(execution_times)
 print(num_factibles)
 print(num_opt)
+
