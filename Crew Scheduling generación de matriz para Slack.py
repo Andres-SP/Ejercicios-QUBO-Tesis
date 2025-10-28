@@ -7,10 +7,11 @@ Created on Mon Jan 20 16:52:54 2025
 
 import sympy as sp
 
-Par = 20
+Par = 10
 
 x1, x2, x3, x4, x5, x6, x7, x8, x9, x10, x11 = sp.symbols('x1 x2 x3 x4 x5 x6 x7 x8 x9 x10 x11')
-fo = 2*x1 + 4*x2 + 4*x3 + 3*x4 + 2*x5 + Par*(- x1 - x4 + x1*x4 + 1 - x2 - x3 + x2*x3 + 1 - x2 - x5 + x2*x5 + 1 - x1 - x3 + x1*x3 + 1)
+fo = 2*x1 + 4*x2 + 4*x3 + 3*x4 + 2*x5 + Par*(- x1 - x4 + x1*x4 + 1 - x2 - x3 + x2*x3
+                                             + 1 - x2 - x5 + x2*x5 + 1 - x1 - x3 + x1*x3 + 1) # Se incluyen ya las restricciones con función de penalización conocida
 restricciones = [x3 + x4 + x5 - x6 - 2*x7 - 1, x1 + x2 + x4 - x8 - 2*x9 - 1,
                  x1 + x2 + x3 + x4 + x5 + x10 + 2*x11 - 3]
 variables = [x1, x2, x3, x4, x5, x6, x7, x8, x9, x10, x11]
@@ -60,3 +61,4 @@ for coef_fo, mono_fo in zip(coef_fo, mon_fo):
     elif len(indices_fo) == 2:  # Término de dos variables
         i, j = indices_fo
         matriz[i, j] += coef_fo
+      
